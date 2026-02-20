@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+button {
+  grid-column: span 2;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background: #6f42c1;
+  cursor: pointer;
+}
+
+.result-card {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.progress-wrapper {
+  background: #ddd;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 14px;
+  background: linear-gradient(90deg, #34d399, #10b981);
+}

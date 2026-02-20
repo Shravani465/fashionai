@@ -1,0 +1,37 @@
+@model VibeFit.Web.Models.RecommendationInputViewModel
+@{
+    ViewData["Title"] = "VibeFit Recommender";
+    var result = ViewBag.Result as VibeFit.Web.Models.RecommendationResultViewModel;
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="container">
+    <h1>VibeFit - AI Fashion Recommender</h1>
+    <p>Fill in your style profile to get personalized outfit advice.</p>
+
+    <form method="post" class="form-grid">
+        <label>Gender <input asp-for="Gender" /></label>
+        <label>Body Type <input asp-for="BodyType" /></label>
+        <label>Skin Tone <input asp-for="SkinTone" /></label>
+        <label>Occasion <input asp-for="Occasion" /></label>
+        <label>Weather <input asp-for="Weather" /></label>
+        <label>Style Preference <input asp-for="StylePreference" /></label>
+        <button type="submit">Get Recommendation</button>
+    </form>
+
+    @if (result != null)
+    {
+        <div class="result-card">
+            <h2>Recommended Outfit</h2>
+            <p><strong>@result.RecommendedOutfit</strong></p>
+            <p>Color suggestion: @result.ColorSuggestion</p>
+            <p>@result.Explanation</p>
+
+            <div class="progress-wrapper">
+                <div class="progress-bar" style="width:@result.ConfidenceScore%"></div>
+            </div>
+            <p>Confidence: @result.ConfidenceScore%</p>
+        </div>
+    }
+</div>
