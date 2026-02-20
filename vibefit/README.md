@@ -27,14 +27,22 @@ Path: `python-ai/`
 ### What it does
 - Accepts user profile input.
 - Uses **rule-based scoring** for explainable recommendations.
-- Uses lightweight **KNN model (scikit-learn)** as an ML layer.
+- Uses optional lightweight **KNN model (scikit-learn)** as ML layer.
 - Returns:
   - `recommended_outfit`
   - `color_suggestion`
   - `confidence_score`
   - `explanation`
 
-### Run locally
+### Real local preview (works without external pip dependencies)
+If your environment blocks package installation, use this command to prove recommendation logic works:
+
+```bash
+cd python-ai
+python preview.py
+```
+
+### Run full FastAPI service
 ```bash
 cd python-ai
 python -m venv .venv
@@ -134,6 +142,7 @@ vibefit/
 ├── database/
 │   └── schema.sql
 ├── python-ai/
+│   ├── preview.py
 │   ├── requirements.txt
 │   └── app/
 │       ├── main.py
